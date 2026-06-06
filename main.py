@@ -32,7 +32,7 @@ class Variant17App(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
         self.title("Вариант 17")
-        self.geometry("660x455")
+        self.geometry("660x540")
         self.configure(bg="white")
         self.resizable(False, False)
         self.show_main_menu()
@@ -57,11 +57,11 @@ class Variant17App(tk.Tk):
             bd=3,
             anchor="w",
             padx=20,
-            pady=9,
+            pady=7,
         )
 
     def output_box(self, parent: tk.Widget) -> tk.Text:
-        box = tk.Text(parent, height=10, bg="white", fg="black", relief="solid", bd=2, font=("Consolas", 12))
+        box = tk.Text(parent, height=8, bg="white", fg="black", relief="solid", bd=2, font=("Consolas", 12))
         box.pack(fill="both", expand=True, pady=8)
         return box
 
@@ -89,7 +89,7 @@ class Variant17App(tk.Tk):
         container.pack(fill="both", expand=True, padx=18, pady=4)
         for index, task in enumerate(TASKS, start=1):
             btn = self.make_button(container, task, lambda i=index: self.open_task(i))
-            btn.pack(fill="x", pady=5)
+            btn.pack(fill="x", pady=4)
 
     def back_button(self, parent: tk.Widget) -> None:
         tk.Button(parent, text="← Назад", command=self.show_main_menu, bg="white", fg="black", relief="solid", bd=2, padx=14).pack(anchor="w", pady=(0, 8))
